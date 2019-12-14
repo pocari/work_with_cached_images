@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +14,10 @@ class MyApp extends StatelessWidget {
           title: Text("image 3"),
         ),
         body: Center(
-          child: Text("hello, world"),
+          child: CachedNetworkImage(
+            placeholder: (context, url) => CircularProgressIndicator(),
+            imageUrl: 'https://picsum.photos/250?image=9',
+          ),
         ),
       ),
     );
